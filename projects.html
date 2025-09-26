@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: rgb(44, 44, 44);
+        color: white;
+        font-family: "Montserrat";
+        margin: 0;
+        padding: 0;
+      }
+
+      
+      .navbar {
+        background-color: #000000;
+        overflow: hidden;
+      }
+
+      .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+      }
+
+      .navbar a:hover {
+        background-color: #575757;
+      }
+
+      
+      .Projects {
+        padding: 40px;
+      }
+
+      .Projects > h1 {
+        text-align: center;
+        margin-bottom: 40px;
+        color: aqua;
+      }
+
+      .project {
+        margin-bottom: 40px;
+        opacity: 0.7;
+        transition: opacity 0.5s ease;
+      }
+      .project:hover {
+        opacity: 1;
+      }
+
+      .project h2 {
+        margin-bottom: 15px;
+      }
+
+      
+      .project-content {
+        display: flex;
+        align-items: center;
+        gap: 20px; 
+
+      .project-content video {
+        width: 600px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      }
+
+      .project-content h3 {
+        flex: 1; 
+        font-weight: normal;
+        line-height: 1.5;
+      }
+      .creators {
+        margin-top: 10px;
+        font-size: 14px;
+        font-style: italic;
+        color: #aaa;
+        text-align: center;
+      }
+      .more {
+        text-align: center;
+      }
+      .contact {
+        padding: 20px;
+        background: #111;
+        align-items: center;
+        color: #aaa;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="navbar">
+      <a href="index.html">Back to Home</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+   
+    <div class="Projects" id="projects">
+      <h1>Projects</h1>
+
+      <div class="project">
+        <h2>Traffic Simulator Project</h2>
+        <div class="project-content">
+          <video src="Videos/traffic.mp4" muted loop></video>
+          <h3>
+            This <strong>C++ </strong> simulates traffic light systems, pedestrian and vehicle
+            interactions at intersections. It processes pedestrian crossing
+            requests, traffic light timing to demonstrate managing congestion.
+          </h3>
+        </div>
+        <div class="creators">Created by Al-Fahad Hamsaji, Khan Fernandez, Musa Latip</div>
+      </div>
+
+      <div class="project">
+        <h2>MadBox Online Ordering Website</h2>
+        <div class="project-content">
+          <video src="Videos/madbox.mp4" muted loop></video>
+          <h3>
+            The website was developed to create a user-friendly ordering system
+            for MadBox that allows users to purchase items they desire.
+          </h3>
+        </div>
+        <div class="creators">Created by Joseph Francis Tria, Nepthalie Margarette Tadifa, Musa P. Latip</div>
+      </div>
+      <div class="more">
+        <h2> More Projects to Come</h2>
+      </div>
+    </div>
+    <div class="contact" id="contact">
+      <p>📩 Get in touch: co230859@adzu.edu.ph</p>
+      <a href="https://www.facebook.com/mossy.latip.3" class="fa fa-facebook" style="color: blue; font-size: 25px;"></a>
+    </div>
+
+    <script>
+      
+      const videos = document.querySelectorAll(".project-content video");
+
+      videos.forEach(video => {
+        video.addEventListener("mouseenter", () => video.play());
+        video.addEventListener("mouseleave", () => {
+          video.pause();
+          video.currentTime = 0;
+        });
+      });
+    </script>
+  </body>
+</html>
